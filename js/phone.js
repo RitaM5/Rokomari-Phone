@@ -5,9 +5,17 @@ const searchButton = () =>{
      //console.log(url);
      fetch(url)
      .then(res => res.json())
-     .then(data => displayShowsPhone(data.data));
-     searchText.value='';
-    // phoneGallery.innerText='';
+     .then(data => {
+         if(data.status == false){
+             const errorText = document.getElementById('error');errorText.innerText='No device found !'
+             searchText.value='';
+         }
+         else{
+            displayShowsPhone(data.data);
+            searchText.value='';
+           // phoneGallery.innerText='';
+         }
+     });
 
 }
 //for phones gallery
@@ -59,7 +67,7 @@ const displayDetails = (info) => {
    `;
    phoneDetails.appendChild(div);
    for(const prop in info.others){
-    //console.log(prop,arr[prop]);
+    //console.log(prop,info.others[prop]);
     const div = document.createElement('div');
     div.innerHTML=`
     <p>${prop}: ${prop,info.others[prop]}</p>
