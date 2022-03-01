@@ -21,7 +21,7 @@ const displayShowsPhone = phones => {
         const div = document.createElement('div');
         div.classList.add('col-lg-4');
         div.innerHTML=`  
-        <div class="mt-2">
+        <div class="card border-0 mt-2 h-100vh">
         <img width="150px" class="" src=" ${phone.image} " alt="">
         <h5>Name: ${phone.phone_name}</h5>
         <h5>brand: ${phone.brand}</h5>
@@ -44,10 +44,26 @@ const showDetails = (detailId) => {
  
 const displayDetails = (info) => {
     console.log(info);
-     document.getElementById('display-details').innerHTML =`
-     <img width="150px" class="" src=" ${info.image} " alt="">
-     <p>Name: ${info.name}</p> 
-     <p>Release Date: ${info.releaseDate ? info.releaseDate :'release date not available'}</p>
-     `;
-     //const pairs = Object.entries(${info.mainfeatures});
+    const phoneDetails = document.getElementById('display-details');
+    phoneDetails.textContent=''; 
+    const div = document.createElement('div');
+    div.innerHTML =`
+    <img width="150px" class="" src=" ${info.image} " alt="">
+    <p>Name: ${info.name}</p> 
+    <p>Release Date: ${info.releaseDate ? info.releaseDate :'release date not available'}</p>
+    <p>chipSet : ${info.mainFeatures.chipSet}</p>
+    <p>displaySize : ${info.mainFeatures.displaySize}</p>
+    <p>memory : ${info.mainFeatures.memory}</p>
+    <p>sensors : ${info.mainFeatures.sensors}</p>
+   `;
+   phoneDetails.appendChild(div);
+   for(const prop in info.others){
+    //console.log(prop,arr[prop]);
+    const div = document.createElement('div');
+    div.innerHTML=`
+    <p>${prop}: ${prop,info.others[prop]}</p>
+    `;
+    phoneDetails.appendChild(div);
+  }
+
 } 
