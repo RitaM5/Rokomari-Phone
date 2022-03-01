@@ -13,7 +13,6 @@ const searchButton = () =>{
          else{
             displayShowsPhone(data.data);
             searchText.value='';
-           // phoneGallery.innerText='';
          }
      });
 
