@@ -46,6 +46,8 @@ const displayDetails = (info) => {
     console.log(info);
      document.getElementById('display-details').innerHTML =`
      <img width="150px" class="" src=" ${info.image} " alt="">
-     <h5>Name: ${info.name}</h5>
+     <p>Name: ${info.name}</p> 
+     <p>Release Date: ${info.releaseDate ? info.releaseDate :'release date not available'}</p>
      `;
+     //const pairs = Object.entries(${info.mainfeatures});
 } 
