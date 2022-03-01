@@ -15,6 +15,7 @@ const displayShowsPhone = phones => {
     //console.log(phones);
 
     const phoneGallery = document.getElementById('phone-gallery');
+    phoneGallery.textContent ='';
     const mainphones = phones.slice(0, 20);
     for(const phone of mainphones){
         //console.log(phone);
