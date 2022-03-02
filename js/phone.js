@@ -64,14 +64,14 @@ const displayDetails = (info) => {
   <div class="py-2">
   <img width="150px" class="" src=" ${info.image} " alt="">
   </div>
-<div class="">
-  <p><span class="fw-bold">Name :</span> ${info.name}</p> 
-  <p><span class="fw-bold">Release Date :</span> ${info.releaseDate ? info.releaseDate :'release date not available'}</p>
-  <p><span class="fw-bold">chipSet :</span> ${info.mainFeatures.chipSet}</p>
-  <p><span class="fw-bold">displaySize :</span> ${info.mainFeatures.displaySize}</p>
-  <p><span class="fw-bold">memory :</span> ${info.mainFeatures.memory}</p>
-  <p><span class="fw-bold">sensors :</span> ${info.mainFeatures.sensors}</p>
-</div>
+  <div class="">
+        <p><span class="fw-bold">Name :</span> ${info.name}</p> 
+        <p><span class="fw-bold">Release Date :</span> ${info.releaseDate ? info.releaseDate :'release date not available'}</p>
+        <p><span class="fw-bold">chipSet :</span> ${info.mainFeatures.chipSet}</p>
+        <p><span class="fw-bold">displaySize :</span> ${info.mainFeatures.displaySize}</p>
+        <p><span class="fw-bold">memory :</span> ${info.mainFeatures.memory}</p>
+        <p><span class="fw-bold">sensors :</span> ${info.mainFeatures.sensors}</p>
+  </div>
    `;
    phoneDetails.appendChild(div);
    for(const prop in info.others){
